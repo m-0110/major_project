@@ -89,10 +89,16 @@ def upload_image():
         if(uploaded_status):
             status,matched_img_path= test_model.test(test_image, 'train_img_features_method2_copy.csv')
             #T1 = tk.Text(height=5, width=15,fg='#7300e6',bg='#cce6ff',borderwidth=3, relief="ridge")
+            if(status =="matched"):
 
-            label5 = tk.Label(window, text='STATUS OF FACE RECOGNITION: '+status.upper(), fg="#1a1aff", bg='#e6e6ff', padx=15, pady=10)
-            label5['font'] = ("Comic Sans MS", 13, "bold")
-            label5.place(relx=0.57, rely=0.47, anchor=tk.CENTER)
+                label5 = tk.Label(window, text='STATUS OF FACE RECOGNITION: '+status.upper(), fg="#1a1aff", bg='#e6e6ff', padx=25, pady=10)
+                label5['font'] = ("Comic Sans MS", 13, "bold")
+                label5.place(relx=0.57, rely=0.47, anchor=tk.CENTER)
+            else:
+                label5 = tk.Label(window, text='STATUS OF FACE RECOGNITION: '+status.upper(), fg="#1a1aff", bg='#e6e6ff', padx=15, pady=10)
+                label5['font'] = ("Comic Sans MS", 13, "bold")
+                label5.place(relx=0.57, rely=0.47, anchor=tk.CENTER)
+
 
             #T1.place(relx=0.57, rely=0.35, anchor=tk.CENTER)
             #T1.insert(tk.END,status)
